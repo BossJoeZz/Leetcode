@@ -1,9 +1,10 @@
-Leetcode目录
+Linked Lists Leetcode problems
+
 Easy:
 * 21 Merge Two Sorted Lists
 
 ## 21 Merge Two Sorted Lists
-leecthrl
+https://leetcode.com/problems/merge-two-sorted-lists/
 
 ```python
 # Definition for singly-linked list.
