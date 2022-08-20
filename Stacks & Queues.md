@@ -1,3 +1,10 @@
+Leetcode目录
+Easy:
+* 20 Valid Parentheses
+
+## 20 Valid Parentheses (Easy)
+[https://leetcode-cn.com/problems/valid-parentheses/](https://leetcode-cn.com/problems/valid-parentheses/)
+```python
 class Solution:
     def isValid(self, s: str) -> bool:
         if len(s) % 2 == 1:
