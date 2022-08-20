@@ -2,7 +2,8 @@ Linked Lists Leetcode problems
 
 Easy:
 * 21 Merge Two Sorted Lists
-
+* 160 Intersection of Two Linked Lists
+* 
 ## 21 Merge Two Sorted Lists(easy)
 https://leetcode.com/problems/merge-two-sorted-lists/
 
