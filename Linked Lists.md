@@ -3,8 +3,9 @@ Linked Lists Leetcode problems
 Easy:
 * 21 Merge Two Sorted Lists
 * 160 Intersection of Two Linked Lists
-* 
-## 21 Merge Two Sorted Lists(easy)
+* 206 Reverse Linked List
+
+## 21 Merge Two Sorted Lists(Easy)
 https://leetcode.com/problems/merge-two-sorted-lists/
 
 ```python
@@ -54,7 +55,7 @@ class Solution:
             # 每一次的递归都会return l1或l2，最后顺利链接上
 ```
 
-## 160 Intersection of Two Linked Lists(easy)
+## 160 Intersection of Two Linked Lists(Easy)
 https://leetcode.com/problems/intersection-of-two-linked-lists/
 
 ```python
@@ -72,3 +73,30 @@ class Solution:
             p1 = headB if p1 is None else p1.next
             p2 = headA if p2 is None else p2.next
         return p1
+```
+
+## 206 Reverse Linked List (Easy)
+https://leetcode.com/problems/intersection-of-two-linked-lists/
+
+```python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+
+class Solution:
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        
+        if not head: return 
+        
+        before = None
+        current = head
+        
+        while current:
+            after = current.next
+            current.next = before
+            before = current
+            current = after
+        return before
+```        
