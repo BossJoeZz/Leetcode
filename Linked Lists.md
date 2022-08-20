@@ -4,6 +4,8 @@ Easy:
 * 21 Merge Two Sorted Lists
 * 160 Intersection of Two Linked Lists
 * 206 Reverse Linked List
+* 83 Remove Duplicates from Sorted List
+* 234 Palindrome Linked List
 
 ## 21 Merge Two Sorted Lists(Easy)
 https://leetcode.com/problems/merge-two-sorted-lists/
@@ -85,6 +87,8 @@ https://leetcode.com/problems/intersection-of-two-linked-lists/
 #         self.val = val
 #         self.next = next
 
+# 1. 双指针
+
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         
@@ -99,4 +103,76 @@ class Solution:
             before = current
             current = after
         return before
+
+# 2. 递归
+
+class Solution:
+    def reverseList(self, head: ListNode) -> ListNode:
+        if not head or not head.next:
+            return head
+        nextNode = self.reverseList(head.next)
+        head.next.next = head
+        head.next = None
+        # print(nextNode)
+        return nextNode
 ```        
+
+## 83 Remove Duplicates from Sorted List (Easy)
+https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/
+
+```python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+
+class Solution:
+    def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        
+        if not head:
+            return head
+
+        current = head
+        while current.next:
+            if current.val == current.next.val:
+                current.next = current.next.next
+            else:
+                current = current.next
+
+        return head
+```
+
+## 234 Palindrome Linked List (Easy)
+https://leetcode-cn.com/problems/palindrome-linked-list/
+
+```python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+
+class Solution:
+    def isPalindrome(self, head: Optional[ListNode]) -> bool:
+        vals = []
+        current = head
+        while current is not None:
+            vals.append(current.val)
+            current = current.next
+        return vals == vals[::-1]
+        
+class Solution:
+    def isPalindrome(self, head: ListNode) -> bool:
+        if not head: return True
+        stack = []
+        p = head
+        while p:
+            stack.append(p.val)
+            p = p.next
+        while head:
+            if head.val != stack.pop():
+                return False
+            head = head.next
+        return True        
+```
