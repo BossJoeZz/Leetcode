@@ -153,6 +153,7 @@ https://leetcode-cn.com/problems/palindrome-linked-list/
 #         self.val = val
 #         self.next = next
 
+# 1. 对比反转
 class Solution:
     def isPalindrome(self, head: Optional[ListNode]) -> bool:
         vals = []
@@ -161,7 +162,8 @@ class Solution:
             vals.append(current.val)
             current = current.next
         return vals == vals[::-1]
-        
+ 
+# 2. stack
 class Solution:
     def isPalindrome(self, head: ListNode) -> bool:
         if not head: return True
