@@ -3,7 +3,7 @@ Linked Lists Leetcode problems
 Easy:
 * 21 Merge Two Sorted Lists
 
-## 21 Merge Two Sorted Lists
+## 21 Merge Two Sorted Lists(easy)
 https://leetcode.com/problems/merge-two-sorted-lists/
 
 ```python
@@ -51,3 +51,23 @@ class Solution:
             l2.next = self.mergeTwoLists(l1,l2.next)
             return l2
             # 每一次的递归都会return l1或l2，最后顺利链接上
+```
+
+## 160 Intersection of Two Linked Lists(easy)
+https://leetcode.com/problems/intersection-of-two-linked-lists/
+
+```python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
+        p1 = headA
+        p2 = headB
+        while p1 != p2:
+            p1 = headB if p1 is None else p1.next
+            p2 = headA if p2 is None else p2.next
+        return p1
