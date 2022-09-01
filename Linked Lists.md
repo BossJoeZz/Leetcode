@@ -78,7 +78,7 @@ class Solution:
 ```
 
 ## 206 Reverse Linked List (Easy)
-https://leetcode.com/problems/intersection-of-two-linked-lists/
+https://leetcode.com/problems/reverse-linked-list/
 
 ```python
 # Definition for singly-linked list.
