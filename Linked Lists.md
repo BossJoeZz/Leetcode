@@ -23,8 +23,8 @@ https://leetcode.com/problems/merge-two-sorted-lists/
 
 class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
-        if not l1: return l2 # not l1的意思就是l1 is None
-        if not l2: return l1 
+        if l1 is None: return l2 # not l1的意思就是l1 is None
+        if l2 is None: return l1 
         
         head = ListNode() # 这里ListNode()是创建了一个
         prev = head
@@ -39,7 +39,7 @@ class Solution:
                 l2 = l2.next
                 prev = prev.next
                 
-        prev.next = l1 if l1 else l2 # 更加简便的if else写法
+        prev.next = l1 if l1 is True else l2 # 更加简便的if else写法
         return head.next
  
 # 2. 递归法
@@ -92,12 +92,12 @@ https://leetcode.com/problems/reverse-linked-list/
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         
-        if not head: return 
+        if head is None: return 
         
         before = None
         current = head
         
-        while current:
+        while current: # while current is not None:
             after = current.next
             current.next = before
             before = current
@@ -118,7 +118,7 @@ class Solution:
 ```        
 
 ## 83 Remove Duplicates from Sorted List (Easy)
-https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/
+https://leetcode.com/problems/remove-duplicates-from-sorted-list/)
 
 ```python
 # Definition for singly-linked list.
@@ -135,8 +135,8 @@ class Solution:
 
         current = head
         while current.next:
-            if current.val == current.next.val:
-                current.next = current.next.next
+            if current.val == current.next.val: 
+                current.next = current.next.next // 也许这里原本重复的node就自动断开？or重叠？
             else:
                 current = current.next
 
@@ -158,7 +158,7 @@ class Solution:
     def isPalindrome(self, head: Optional[ListNode]) -> bool:
         vals = []
         current = head
-        while current is not None:
+        while current:
             vals.append(current.val)
             current = current.next
         return vals == vals[::-1]
