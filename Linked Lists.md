@@ -144,7 +144,7 @@ class Solution:
         current = head
         while current.next:
             if current.val == current.next.val: 
-                current.next = current.next.next // 也许这里原本重复的node就自动断开？or重叠？
+                current.next = current.next.next # 也许这里原本重复的node就自动断开？or重叠？
             else:
                 current = current.next
 
