@@ -77,12 +77,12 @@ https://leetcode.com/problems/intersection-of-two-linked-lists/
 
 class Solution:
     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
-        p1 = headA
-        p2 = headB
-        while p1 != p2:
-            p1 = headB if p1 is None else p1.next
-            p2 = headA if p2 is None else p2.next
-        return p1
+        node1 = headA
+        node2 = headB
+        while node1 != node2:
+            node1 = headB if node1 is None else node1.next
+            node2 = headA if node2 is None else node2.next
+        return node1
 ```
 
 ## 206 Reverse Linked List (Easy)
@@ -100,17 +100,17 @@ https://leetcode.com/problems/reverse-linked-list/
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         
-        if head is None: return 
+        if head is None: return None 
         
-        before = None
+        previous = None
         current = head
         
         while current: # while current is not None:
             after = current.next
-            current.next = before
-            before = current
+            current.next = previous
+            previous = current
             current = after
-        return before
+        return previous
 
 # 2. 递归
 
