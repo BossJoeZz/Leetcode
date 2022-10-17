@@ -28,25 +28,27 @@ https://leetcode.com/problems/merge-two-sorted-lists/
 # 1. 迭代法
 
 class Solution:
-    def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
-        if l1 is None: return l2 # not l1的意思就是l1 is None
-        if l2 is None: return l1 
-        
-        head = ListNode() # 这里ListNode()是创建了一个
-        prev = head
-        
-        while l1 and l2: # while l1 and l2 就是l1 and l2 is not None
-            if l1.val < l2.val:
-                prev.next = l1
-                l1 = l1.next
-                prev = prev.next
+    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+
+        if not list1: return list2
+        if not list2: return list1
+
+        head = ListNode()
+        prev = head # 看题，提前定义head
+
+        while list1 and list2:
+            if list1.val <= list2.val:
+                prev.next = list1
+                list1 = list1.next
+            
             else:
-                prev.next = l2
-                l2 = l2.next
-                prev = prev.next
+                prev.next = list2
+                list2 = list2.next
                 
-        prev.next = l1 if l1 is True else l2 # 更加简便的if else写法
-        return head.next
+        prev = prev.next # 两次循环都要用这个语句，可以直接汇总
+
+        prev.next = list1 if list1 is not None else list2
+        return head.next # 要return head的next
  
 # 2. 递归法
  
