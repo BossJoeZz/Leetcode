@@ -126,7 +126,7 @@ class Solution:
 ```        
 
 ## 83 Remove Duplicates from Sorted List (Easy)
-https://leetcode.com/problems/remove-duplicates-from-sorted-list/)
+https://leetcode.com/problems/remove-duplicates-from-sorted-list/
 
 ```python
 # Definition for singly-linked list.
