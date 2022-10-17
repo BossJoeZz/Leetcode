@@ -1,8 +1,7 @@
-# Linked Lists
+# Linked Lists Notes
 splice - 拼接
 
-Linked Lists Leetcode problems
-
+# Linked Lists Leetcode problems
 Easy:
 * 21 Merge Two Sorted Lists
 * 160 Intersection of Two Linked Lists
@@ -11,7 +10,7 @@ Easy:
 * 234 Palindrome Linked List
 
 Medium:
-* 19. Remove Nth Node From End of List
+* 19 Remove Nth Node From End of List
 * 
 
 ## 21 Merge Two Sorted Lists(Easy)
