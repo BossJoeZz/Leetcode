@@ -1,5 +1,5 @@
 # Linked Lists
-## lsaar
+splice - 拼接
 
 Linked Lists Leetcode problems
 
