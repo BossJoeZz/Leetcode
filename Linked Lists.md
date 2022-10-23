@@ -1,6 +1,3 @@
-# Linked Lists Notes
-splice - 拼接
-
 # Linked Lists Leetcode problems
 Easy:
 * 21 Merge Two Sorted Lists
