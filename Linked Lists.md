@@ -34,20 +34,20 @@ class Solution:
         if not list2: return list1
 
         head = ListNode()
-        prev = head # 看题，提前定义head
+        p = head # 看题，提前定义head
 
         while list1 and list2:
             if list1.val <= list2.val:
-                prev.next = list1
+                p.next = list1
                 list1 = list1.next
             
             else:
-                prev.next = list2
+                p.next = list2
                 list2 = list2.next
                 
-        prev = prev.next # 两次循环都要用这个语句，可以直接汇总
+        p = p.next # 两次循环都要用这个语句，可以直接汇总
 
-        prev.next = list1 if list1 is not None else list2
+        p.next = list1 if list2 is not None else list2
         return head.next # 要return head的next
  
 # 2. 递归法
@@ -80,7 +80,7 @@ class Solution:
         node1 = headA
         node2 = headB
         while node1 != node2:
-            node1 = headB if node1 is None else node1.next
+            node1 = headB if node1 is None else node1.next # 一定要写成None，这样才能触发终止条件
             node2 = headA if node2 is None else node2.next
         return node1
 ```
@@ -142,7 +142,7 @@ class Solution:
             return head
 
         current = head
-        while current.next:
+        while current.next: 必须是current.next，否则会报错，因为current为空时没有val这个属性
             if current.val == current.next.val: 
                 current.next = current.next.next # 也许这里原本重复的node就自动断开？or重叠？
             else:
@@ -152,7 +152,7 @@ class Solution:
 ```
 
 ## 234 Palindrome Linked List (Easy)
-https://leetcode-cn.com/problems/palindrome-linked-list/
+https://leetcode.com/problems/palindrome-linked-list/
 
 ```python
 # Definition for singly-linked list.
