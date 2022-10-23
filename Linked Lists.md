@@ -17,13 +17,6 @@ Medium:
 https://leetcode.com/problems/merge-two-sorted-lists/
 
 ```python
-# non-decreasing就是升序的意思？
-
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
 
 # 1. 迭代法
 
@@ -34,20 +27,20 @@ class Solution:
         if not list2: return list1
 
         head = ListNode()
-        p = head # 看题，提前定义head
+        current = head # 看题，提前定义head
 
         while list1 and list2:
             if list1.val <= list2.val:
-                p.next = list1
+                current.next = list1
                 list1 = list1.next
             
             else:
-                p.next = list2
+                current.next = list2
                 list2 = list2.next
                 
         p = p.next # 两次循环都要用这个语句，可以直接汇总
 
-        p.next = list1 if list2 is not None else list2
+        current.next = list1 if list2 is not None else list2
         return head.next # 要return head的next
  
 # 2. 递归法
@@ -139,10 +132,10 @@ class Solution:
     def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
         
         if not head:
-            return head
+            return head # 必须要加，因为如果head为空，是没有next这个属性的
 
         current = head
-        while current.next: 必须是current.next，否则会报错，因为current为空时没有val这个属性
+        while current.next: 必须是current.next，否则会报错，因为current为空是没有val这个属性的
             if current.val == current.next.val: 
                 current.next = current.next.next # 也许这里原本重复的node就自动断开？or重叠？
             else:
@@ -164,11 +157,14 @@ https://leetcode.com/problems/palindrome-linked-list/
 # 1. 对比反转
 class Solution:
     def isPalindrome(self, head: Optional[ListNode]) -> bool:
+    
         vals = []
         current = head
+        
         while current:
             vals.append(current.val)
             current = current.next
+            
         return vals == vals[::-1]
  
 # 2. stack
