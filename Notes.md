@@ -7,6 +7,8 @@ Custom Judge - 自定义评测
 
 palindrome - 回文，就是对称链表
 
+inorder traversal - 中序遍历，即按照左子树-根节点-右子树的顺序来遍历
+
 ## Code
 python开头def的含义
 ```python
