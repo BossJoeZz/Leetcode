@@ -5,6 +5,8 @@ Easy:
 * 206 Reverse Linked List
 * 83 Remove Duplicates from Sorted List
 * 234 Palindrome Linked List
+* 203 Remove Linked List Elements
+* 141 Linked List Cycle
 
 Medium:
 * 19 Remove Nth Node From End of List
@@ -179,3 +181,78 @@ class Solution:
             head = head.next
         return True        
 ```
+
+## 21 Merge Two Sorted Lists(Easy)
+https://leetcode.com/problems/remove-linked-list-elements/
+
+```python
+# 1. 迭代法 - 分情况考虑
+class Solution:
+    def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
+
+        while head and head.val == val:
+            head = head.next
+
+        if head is None:
+            return head
+
+        node = head
+
+        while node.next:
+            if node.next.val == val:
+                node.next = node.next.next
+            else:
+                node = node.next
+        
+        return head
+
+# 2. 迭代法 - 虚拟节点直接全部考虑
+class Solution2:
+    def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
+    
+        pre_node = ListNode(next=head)
+        node = pre_node
+        
+        while node.next:
+            if node.next.val == val:
+                node.next = node.next.next
+            else:
+                node = node.next
+                
+        return pre_node.next
+```
+
+## 141 Linked List Cycle(Easy)
+https://leetcode.com/problems/linked-list-cycle/
+
+```python
+# 1. 哈希表(tuple)
+class Solution:
+    def hasCycle(self, head: Optional[ListNode]) -> bool:
+        table = set()
+
+        while head:
+            if head in table:
+                return True
+                
+            table.add(head) # append?
+            head = head.next
+        
+        return False
+
+# 2. 快慢指针
+class Solution:
+    def hasCycle(self, head: Optional[ListNode]) -> bool:
+        if not head or not head.next:
+            return False
+        
+        slow = head
+        fast = head.next
+
+        while slow != fast:
+            if not fast or not fast.next:
+                return False
+            slow = slow.next
+            fast = fast.next.next
+        
+        return True
