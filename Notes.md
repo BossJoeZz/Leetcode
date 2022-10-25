@@ -1,7 +1,10 @@
 ## Words
 splice - 拼接
+
 non-decreasing - 非递减，是为了严谨，可能会有相同的元素，这时候用递增也不太合适
+
 Custom Judge - 自定义评测
+
 palindrome - 回文，就是对称链表
 
 ## Code
