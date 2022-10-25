@@ -1,3 +1,6 @@
+# Notes
+1. while要慎重考虑循环条件，否则会报nonetype错误
+
 # Linked Lists Leetcode problems
 Easy:
 * 21 Merge Two Sorted Lists
@@ -10,7 +13,6 @@ Easy:
 
 Medium:
 * 19 Remove Nth Node From End of List
-* 
 
 ## 21 Merge Two Sorted Lists(Easy)
 https://leetcode.com/problems/merge-two-sorted-lists/
