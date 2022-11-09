@@ -9,7 +9,7 @@ inorder - 中序，二叉搜索树的中序遍历得到的数组为排序数组
 # leetcode problems
 
 Easy:
-* 94. Binary Tree Inorder Traversal
+94. Binary Tree Inorder Traversal
 
 94. Binary Tree Inorder Traversal
 https://leetcode.com/problems/binary-tree-inorder-traversal/
