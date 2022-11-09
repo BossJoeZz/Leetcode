@@ -13,6 +13,7 @@ Easy:
 
 94. Binary Tree Inorder Traversal
 https://leetcode.com/problems/binary-tree-inorder-traversal/
+
 ```python
 class Solution:
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
@@ -29,4 +30,4 @@ class Solution:
                 res.append(node.val)
                 node = node.right
         return res
-```python
+```
