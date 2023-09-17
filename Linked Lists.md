@@ -38,10 +38,10 @@ class Solution:
             else:
                 current.next = list2
                 list2 = list2.next
+            
+            current = current.next
                 
-        p = p.next # 两次循环都要用这个语句，可以直接汇总
-
-        current.next = list1 if list2 is not None else list2
+        current.next = list1 if list2 is None else list2
         return head.next # 要return head的next
  
 # 2. 递归法
